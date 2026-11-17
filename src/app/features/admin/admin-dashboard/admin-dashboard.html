@@ -1,0 +1,49 @@
+<div class="message-list" *ngIf="!isLoading && contacts.length > 0">
+
+  <article
+    class="message-card"
+    *ngFor="let contact of contacts;"
+    [class.unread]="contact.status === 'New'"
+  >
+
+    <div class="message-info">
+
+      <div class="message-title">
+        <h3>{{ contact.subject }}</h3>
+
+        <span
+          class="status"
+          [class.new-status]="contact.status === 'New'"
+        >
+          {{ contact.status }}
+        </span>
+      </div>
+
+      <p><strong>From:</strong> {{ contact.name }}</p>
+
+      <p><strong>Email:</strong> {{ contact.email }}</p>
+
+      <p class="message-preview">
+        {{ contact.message }}
+      </p>
+
+      <small>
+        {{ contact.createdAt | date:'medium' }}
+      </small>
+
+    </div>
+
+    <button
+      type="button"
+      class="view-button"
+      (click)="openMessage(contact)"
+    >
+      View Message
+    </button>
+
+  </article>
+
+</div>
+<!-- <p style="color: red; font-size: 18px;">
+  Debug: Total contacts = {{ contacts.length }}
+</p> -->

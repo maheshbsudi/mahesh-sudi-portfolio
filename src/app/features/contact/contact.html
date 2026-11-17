@@ -1,0 +1,213 @@
+<section class="contact-page">
+
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="section-container">
+
+      <span class="section-label">GET IN TOUCH</span>
+
+      <h1>
+        Let's Work <span>Together</span>
+      </h1>
+
+      <p>
+        Have an opportunity, a project idea, or just want to connect?
+        I'd love to hear from you.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- Contact Content -->
+  <section class="section-container contact-section">
+
+    <div class="contact-grid">
+
+      <!-- Left Side -->
+      <div class="contact-info">
+
+        <span class="section-label">CONTACT INFORMATION</span>
+
+        <h2>Let's start a conversation</h2>
+
+        <p class="info-description">
+          I'm open to discussing Senior Angular Developer
+          opportunities, frontend development and full-stack projects.
+          Feel free to reach out.
+        </p>
+
+        <!-- Email -->
+        <a class="info-card" [href]="'mailto:' + email">
+
+          <div class="info-icon">✉</div>
+
+          <div>
+            <span>Email</span>
+            <h3>{{ email }}</h3>
+          </div>
+
+          <span class="arrow">↗</span>
+        </a>
+
+        <a class="info-card" [href]="'tel:' + phone">
+
+          <div class="info-icon">📞</div>
+
+          <div>
+            <span>Call</span>
+            <h3>{{ phone }}</h3>
+          </div>
+
+          <span class="arrow">↗</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="info-card" [href]="linkedinUrl" target="_blank" rel="noopener noreferrer">
+
+          <div class="info-icon">in</div>
+
+          <div>
+            <span>LinkedIn</span>
+            <h3>Connect professionally</h3>
+          </div>
+
+          <span class="arrow">↗</span>
+        </a>
+
+        <!-- GitHub -->
+        <a class="info-card" [href]="githubUrl" target="_blank" rel="noopener noreferrer">
+
+          <div class="info-icon">⌘</div>
+
+          <div>
+            <span>GitHub</span>
+            <h3>Explore my projects</h3>
+          </div>
+
+          <span class="arrow">↗</span>
+        </a>
+
+        <div class="availability-card">
+          <span class="availability-dot"></span>
+
+          <div>
+            <h4>Open to opportunities</h4>
+            <p>Available for relevant Angular Developer roles.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Side: Contact Form -->
+      <div class="contact-form-card">
+
+        <div class="form-heading">
+          <h2>Send Me a Message</h2>
+          <p>Fill out the form and I'll be happy to connect.</p>
+        </div>
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Your Name</label>
+
+            <input id="name" type="text" formControlName="name" placeholder="Enter your name" autocomplete="name"
+              [class.invalid]="f.name.invalid && f.name.touched">
+
+            <small class="error-message">
+              {{ getErrorMessage('name') }}
+            </small>
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address</label>
+
+            <input id="email" type="email" formControlName="email" placeholder="Enter your email" autocomplete="email"
+              [class.invalid]="f.email.invalid && f.email.touched">
+
+            <small class="error-message">
+              {{ getErrorMessage('email') }}
+            </small>
+          </div>
+
+          <!-- Subject -->
+          <div class="form-group">
+            <label for="subject">Subject</label>
+
+            <input id="subject" type="text" formControlName="subject" placeholder="What would you like to discuss?"
+              [class.invalid]="f.subject.invalid && f.subject.touched">
+
+            <small class="error-message">
+              {{ getErrorMessage('subject') }}
+            </small>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Your Message</label>
+
+            <textarea id="message" rows="5" formControlName="message" placeholder="Write your message here..."
+              [class.invalid]="f.message.invalid && f.message.touched">
+            </textarea>
+
+            <small class="error-message">
+              {{ getErrorMessage('message') }}
+            </small>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" [disabled]="isSubmitting" class="submit-button">
+
+            {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+
+            <i class="fas fa-arrow-right"></i>
+          </button>
+          <a href="/assets/resume/Mahesh_Senior_Angular_Developer_with_Nodejs.pdf" download="Mahesh-Sudi-Resume.pdf"
+            class="resume-download-button">
+
+            <i class="fas fa-download"></i>
+            Download My Resume
+
+          </a>
+          <!-- Resume Last Updated Date -->
+          <p class="resume-updated">
+            <i class="far fa-calendar-alt"></i>
+            Last updated: November 2026
+          </p>
+          <!-- <p *ngIf="successMessage" class="success-message">
+            {{ successMessage }}
+          </p>
+
+          <p *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </p> -->
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="contact-bottom">
+    <div class="section-container">
+
+      <h2>Thank you for visiting my portfolio!</h2>
+
+      <p>
+        I'm always interested in connecting with people
+        and exploring new opportunities.
+      </p>
+
+      <a routerLink="/home" class="home-button">
+        Back to Home →
+      </a>
+
+    </div>
+  </section>
+
+</section>

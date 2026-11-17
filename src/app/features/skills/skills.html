@@ -1,0 +1,155 @@
+
+<main class="skills-page">
+
+  <!-- Hero Section -->
+  <section class="skills-hero">
+
+    <div class="skills-container">
+
+      <span class="section-label">
+        MY TECHNICAL EXPERTISE
+      </span>
+
+      <h1>
+        Skills & <span>Technologies</span>
+      </h1>
+
+      <p>
+        A collection of technologies, tools and concepts
+        I use to build responsive, scalable and
+        high-performance web applications.
+      </p>
+
+      <div class="skills-overview">
+
+        <div class="overview-item">
+          <h2>{{ totalSkills }}+</h2>
+          <span>Technical Skills</span>
+        </div>
+
+        <div class="overview-item">
+          <h2>6+</h2>
+          <span>Years Experience</span>
+        </div>
+
+        <div class="overview-item">
+          <h2>6</h2>
+          <span>Skill Categories</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Skills Categories -->
+  <section class="skills-content">
+
+    <div class="skills-container">
+
+      <div class="section-heading">
+
+        <span>WHAT I WORK WITH</span>
+
+        <h2>My Technical Skillset</h2>
+
+        <p>
+          Technologies and tools across frontend,
+          backend, development and performance optimization.
+        </p>
+
+      </div>
+
+
+      <div class="category-grid">
+
+        <article
+          class="category-card"
+          *ngFor="let category of categories; let i = index">
+
+          <!-- Card Header -->
+          <div class="card-header">
+
+            <div class="category-icon">
+              {{ category.icon }}
+            </div>
+
+            <!-- <span class="category-number">
+              0{{ i + 1 }}
+            </span> -->
+
+          </div>
+
+
+          <!-- Card Content -->
+          <h3>{{ category.title }}</h3>
+
+          <p class="category-description">
+            {{ category.description }}
+          </p>
+
+
+          <!-- Skills -->
+          <div class="skill-list">
+
+            <div
+              class="skill-item"
+              *ngFor="let skill of category.skills">
+
+              <span class="skill-symbol">
+                {{ skill.shortName }}
+              </span>
+
+              <span class="skill-name">
+                {{ skill.name }}
+              </span>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Bottom CTA -->
+  <section class="skills-cta">
+
+    <div class="skills-container">
+
+      <div class="cta-content">
+
+        <span>LET'S BUILD SOMETHING GREAT</span>
+
+        <h2>
+          Have an interesting project in mind?
+        </h2>
+
+        <p>
+          Let's connect and discuss how we can
+          build something amazing together.
+        </p>
+
+        <a routerLink="/contact"
+           class="cta-button">
+
+          Contact Me
+
+          <span>→</span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>

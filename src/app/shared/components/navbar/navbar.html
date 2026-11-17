@@ -1,0 +1,45 @@
+<header class="navbar">
+
+  <div class="nav-container">
+
+    <!-- Logo -->
+    <a routerLink="/" class="logo" (click)="closeMenu()">
+      Mahesh Sudi<span></span>
+    </a>
+
+    <!-- Hamburger Menu -->
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen"
+      aria-label="Toggle navigation menu">
+
+      <span [class.open]="isMenuOpen"></span>
+      <span [class.open]="isMenuOpen"></span>
+      <span [class.open]="isMenuOpen"></span>
+
+    </button>
+
+    <!-- Navigation Links -->
+    <nav class="nav-links" [class.active]="isMenuOpen" aria-label="Main navigation">
+
+      <a *ngFor="let item of navItems" [routerLink]="item.route" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.route === '/' }" (click)="closeMenu()">
+
+        {{ item.label }}
+
+      </a>
+
+      <!-- Admin Login -->
+      <!-- <a
+        routerLink="/admin/login"
+        routerLinkActive="active"
+        class="admin-btn"
+        (click)="closeMenu()">
+
+        Admin Login
+
+      </a> -->
+
+    </nav>
+
+  </div>
+
+</header>

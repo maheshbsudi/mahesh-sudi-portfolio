@@ -1,0 +1,217 @@
+
+<main class="experience-page">
+
+  <!-- Hero Section -->
+  <section class="experience-hero">
+
+    <div class="experience-container">
+
+      <span class="section-label">
+        MY PROFESSIONAL JOURNEY
+      </span>
+
+      <h1>
+        Work <span>Experience</span>
+      </h1>
+
+      <p>
+        My professional journey, the projects I've
+        contributed to, and the technologies I've
+        worked with throughout my career.
+      </p>
+
+      <div class="experience-stats">
+
+        <div class="stat-item">
+          <h2>5</h2>
+          <span>Organizations</span>
+        </div>
+
+        <div class="stat-item">
+          <h2>6+</h2>
+          <span>Years Experience</span>
+        </div>
+
+        <div class="stat-item">
+          <h2>Angular</h2>
+          <span>Core Expertise</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Experience Timeline -->
+  <section class="experience-content">
+
+    <div class="experience-container">
+
+      <div class="section-heading">
+
+        <span>CAREER HISTORY</span>
+
+        <h2>Where I've Worked</h2>
+
+        <p>
+          A journey of professional growth,
+          learning and building web applications.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <article
+          class="timeline-item"
+          *ngFor="let exp of experiences; let i = index">
+
+          <!-- Timeline Marker -->
+          <div class="timeline-marker">
+
+            <span>{{ i + 1 }}</span>
+
+          </div>
+
+
+          <!-- Experience Card -->
+          <div class="experience-card">
+
+            <!-- Card Header -->
+            <div class="experience-header">
+
+              <div class="company-info">
+
+                <span class="company-label">
+                  <!-- EXPERIENCE {{ i + 1 }} -->
+                </span>
+
+                <h3>{{ exp.company }}</h3>
+
+                <h4>{{ exp.role }}</h4>
+
+              </div>
+
+              <div class="experience-meta">
+
+                <!-- <span class="duration">
+                  <span class="meta-icon">◷</span>
+                  {{ exp.duration }}
+                </span> -->
+
+                <span class="location">
+                  <span class="meta-icon">⌖</span>
+                  {{ exp.location }}
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <!-- Description -->
+            <p class="experience-description">
+              {{ exp.description }}
+            </p>
+
+
+            <!-- Project Details -->
+            <div class="project-details">
+
+              <h4>
+                <span class="project-icon">▣</span>
+                Project Details
+              </h4>
+
+              <h5>{{ exp.project }}</h5>
+
+              <p>
+                {{ exp.projectDescription }}
+              </p>
+
+            </div>
+
+
+            <!-- Responsibilities -->
+            <div class="responsibilities">
+
+              <h4>Key Responsibilities</h4>
+
+              <ul>
+
+                <li
+                  *ngFor="let responsibility of exp.responsibilities">
+
+                  <span class="check-icon">✓</span>
+
+                  {{ responsibility }}
+
+                </li>
+
+              </ul>
+
+            </div>
+
+
+            <!-- Technologies -->
+            <div class="technologies">
+
+              <h4>Technologies Used</h4>
+
+              <div class="technology-list">
+
+                <span
+                  class="technology-badge"
+                  *ngFor="let tech of exp.technologies">
+
+                  {{ tech }}
+
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- Bottom CTA -->
+  <section class="experience-cta">
+
+    <div class="experience-container">
+
+      <span>WHAT'S NEXT?</span>
+
+      <h2>
+        Let's Create Something Amazing Together
+      </h2>
+
+      <p>
+        I'm always interested in exciting opportunities
+        and challenging development projects.
+      </p>
+
+      <a routerLink="/contact" class="cta-button">
+
+        Get In Touch
+
+        <span>→</span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>

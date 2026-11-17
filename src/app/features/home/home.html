@@ -1,0 +1,162 @@
+<main class="home">
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+
+      <!-- Left Content -->
+      <div class="hero-content">
+
+        <span class="welcome-text">
+          Welcome to my portfolio
+        </span>
+
+        <h1>
+          Hi, I'm
+          <span class="name">{{ developerName }}</span>
+        </h1>
+
+        <h2>Senior Angular Developer</h2>
+
+        <p class="hero-description">
+          I am a passionate Frontend Developer and MEAN Stack Developer with around 6.6 years of experience in building
+          responsive, scalable, and high-performance web applications using Angular, TypeScript, and modern frontend
+          technologies.
+        </p>
+
+        <p class="hero-description">
+          Hands-on experience with Node.js and MEAN Stack development, working on backend services, REST API
+          development, and frontend-backend integration.
+        </p>
+
+        <!-- Buttons -->
+        <div class="hero-buttons">
+
+          <a routerLink="/projects" class="btn btn-primary">
+            View My Projects
+            <i class="fas fa-arrow-right"></i>
+          </a>
+
+          <a routerLink="/contact" class="btn btn-outline">
+            Contact Me
+          </a>
+
+          <a href="assets/resume/Mahesh_Senior_Angular_Developer_with_Nodejs.pdf"
+            download="Mahesh-Sudi-Resume.pdf" class="btn btn-primary">
+            <i class="fas fa-download"></i>
+            Resume
+          </a>
+
+        </div>
+
+        <!-- Social Links -->
+        <!-- <div class="social-links">
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+          </a>
+
+        </div> -->
+
+      </div>
+
+      <!-- Right Content: Full Photo -->
+      <div class="hero-image-section">
+
+        <div class="profile-card">
+
+          <img src="/assets/images/mahesh.png" alt="Mahesh - Senior Angular Developer" class="profile-image">
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Experience Highlights -->
+  <section class="highlights-section" id="projects">
+
+    <div class="section-container">
+
+      <div class="highlights-grid">
+
+        <div class="highlight-card" *ngFor="let item of highlights">
+
+          <h3>{{ item.value }}</h3>
+
+          <p>{{ item.title }}</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Skills Section -->
+  <section class="skills-section">
+
+    <div class="section-container">
+
+      <div class="section-heading">
+
+        <span>MY EXPERTISE</span>
+
+        <h2>Technical Skills</h2>
+
+        <p>
+          Technologies and tools I work with to build
+          modern web applications.
+        </p>
+
+      </div>
+
+      <div class="skills-grid">
+
+        <div class="skill-card" *ngFor="let skill of skills">
+
+          {{ skill }}
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="cta-section" id="contact">
+
+    <div class="section-container">
+
+      <h2>Let's Work Together</h2>
+
+      <p>
+        Have an interesting opportunity or project?
+        Let's connect and build something great.
+      </p>
+
+      <a routerLink="/contact" class="btn btn-light">
+
+        Get In Touch
+
+      </a>
+
+    </div>
+
+  </section>
+
+</main>

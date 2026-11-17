@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+/* //snackbar */
+
+/* Success Snackbar - Green */
+.success-snackbar .mdc-snackbar__surface {
+  background-color: #15803d !important;
+}
+
+.success-snackbar .mdc-snackbar__label {
+  color: #ffffff !important;
+}
+
+.success-snackbar .mat-mdc-button {
+  color: #ffffff !important;
+}
+
+/* Error Snackbar - Red */
+.error-snackbar .mdc-snackbar__surface {
+  background-color: #dc2626 !important;
+}
+
+.error-snackbar .mdc-snackbar__label {
+  color: #ffffff !important;
+}
+
+.error-snackbar .mat-mdc-button {
+  color: #ffffff !important;
+}

@@ -1,0 +1,156 @@
+<section class="projects-page">
+
+  <!-- Hero Section -->
+  <div class="projects-hero">
+    <div class="section-container">
+
+      <span class="section-label">MY WORK</span>
+
+      <h1>
+        Projects I've <span>Worked On</span>
+      </h1>
+
+      <p>
+        Explore some of my development projects, technical
+        implementations and practical experience building
+        modern web applications.
+      </p>
+
+      <div class="project-stats">
+        <div class="stat">
+          <h2>{{ projects.length }}</h2>
+          <span>Showcased Projects</span>
+        </div>
+
+        <div class="stat">
+          <h2>Angular</h2>
+          <span>Primary Technology</span>
+        </div>
+
+        <div class="stat">
+          <h2>Full Stack</h2>
+          <span>Development Focus</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Projects Section -->
+  <div class="section-container project-section">
+
+    <div class="section-heading">
+      <div>
+        <span class="section-label">PORTFOLIO</span>
+        <h2>Featured Projects</h2>
+        <p>
+          A collection of applications demonstrating my
+          frontend and full-stack development skills.
+        </p>
+      </div>
+    </div>
+
+    <div class="projects-grid">
+
+      <article class="project-card" *ngFor="let project of projects; let i = index">
+
+        <!-- Project Header -->
+        <div class="project-top">
+          <div class="project-icon">
+            <span *ngIf="project.icon === 'users'">👥</span>
+            <span *ngIf="project.icon === 'code'">💻</span>
+          </div>
+
+          <!-- <span class="project-number">
+            0{{ i + 1 }}
+          </span> -->
+        </div>
+
+        <!-- Project Information -->
+        <div class="project-content">
+
+          <span class="project-category">
+            {{ project.category }}
+          </span>
+
+          <h3>{{ project.title }}</h3>
+
+          <p class="project-description">
+            {{ project.description }}
+          </p>
+
+          <!-- Features -->
+          <div class="features">
+            <h4>Key Features</h4>
+
+            <ul>
+              <li *ngFor="let feature of project.features">
+                <span class="check-icon">✓</span>
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Technologies -->
+          <div class="technology-section">
+            <h4>Technologies Used</h4>
+
+            <div class="technology-list">
+              <span class="technology-tag" *ngFor="let technology of project.technologies">
+                {{ technology }}
+              </span>
+            </div>
+          </div>
+          <div *ngIf="i === projects.length - 1">
+            <a *ngIf="project.URL" [href]="project.URL" target="_blank" rel="noopener noreferrer">
+              Visit Website ↗
+            </a>
+          </div>
+
+          <!-- Project Footer -->
+          <div class="project-footer">
+
+            <span class="project-type">
+              {{ project.type }}
+            </span>
+
+            <div class="project-links">
+
+              <a *ngIf="project.githubUrl" [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">
+                GitHub ↗
+              </a>
+
+              <a *ngIf="project.liveUrl" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">
+                Live Demo ↗
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section class="project-cta">
+    <div class="section-container">
+
+      <h2>Have a project in mind?</h2>
+
+      <p>
+        I'm interested in discussing opportunities,
+        technical challenges and development projects.
+      </p>
+
+      <a routerLink="/contact" class="contact-button">
+        Let's Connect <span>→</span>
+      </a>
+
+    </div>
+  </section>
+
+</section>

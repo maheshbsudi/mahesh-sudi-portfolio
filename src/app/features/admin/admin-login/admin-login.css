@@ -1,0 +1,107 @@
+.admin-login {
+  min-height: 75vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f8fafc;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+  h2 {
+    color: #172554;
+    margin: 0 0 8px;
+  }
+
+  p {
+    color: #64748b;
+  }
+
+  form {
+    display: grid;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  label {
+    font-weight: 600;
+    color: #334155;
+  }
+
+  input {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+
+    &:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    }
+
+    &.invalid {
+      border-color: #dc2626;
+    }
+  }
+
+  button {
+    padding: 13px;
+    border: 0;
+    border-radius: 8px;
+    background: #172554;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  /* All validation errors in red */
+
+  .validation-error {
+    display: block;
+    color: #dc2626;
+    font-size: 13px;
+    margin-top: -7px;
+    line-height: 1.5;
+  }
+
+  /* API error in red */
+
+  .error-message {
+    color: #dc2626;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 4px 0 0;
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+  .admin-login {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 24px 18px;
+  }
+}
