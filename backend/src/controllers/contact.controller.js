@@ -1,5 +1,6 @@
+
+const sendContactEmail = require('../utils/email');
 const Contact = require('../models/contact.model');
-const { sendContactNotification } = require('../utils/sendEmail');
 
 const createContact = async (req, res) => {
     try {
@@ -8,6 +9,7 @@ const createContact = async (req, res) => {
         const subject = String(req.body.subject || '').trim();
         const message = String(req.body.message || '').trim();
 
+        // Required field validation
         if (!name || !email || !subject || !message) {
             return res.status(400).json({
                 success: false,
@@ -15,14 +17,20 @@ const createContact = async (req, res) => {
             });
         }
 
-        if (name.length > 100 || email.length > 254 ||
-            subject.length > 200 || message.length > 5000) {
+        // Maximum length validation
+        if (
+            name.length > 100 ||
+            email.length > 254 ||
+            subject.length > 200 ||
+            message.length > 5000
+        ) {
             return res.status(400).json({
                 success: false,
                 message: 'One or more fields exceed the allowed length'
             });
         }
 
+        // Email validation
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailRegex.test(email)) {
@@ -32,7 +40,7 @@ const createContact = async (req, res) => {
             });
         }
 
-        // Save the message first. Email failure must not lose the message.
+        // Save contact message in MongoDB first
         const contact = await Contact.create({
             name,
             email,
@@ -42,11 +50,17 @@ const createContact = async (req, res) => {
 
         let emailSent = true;
 
+        // Send notification using Brevo
         try {
-            await sendContactNotification(contact);
+            await sendContactEmail(contact);
+            console.log('Brevo notification email sent successfully');
         } catch (emailError) {
             emailSent = false;
-            console.error('Email notification failed:', emailError.message);
+
+            console.error(
+                'Contact saved, but notification email failed:',
+                emailError.message
+            );
         }
 
         return res.status(201).json({
