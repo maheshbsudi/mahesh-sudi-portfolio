@@ -43,7 +43,9 @@ export class AdminService {
   private http = inject(HttpClient);
   private platformId = inject(PLATFORM_ID);
 
-  private apiUrl = 'http://localhost:5000/api/admin';
+  // private apiUrl = 'http://localhost:5000/api/admin';
+  private apiUrl = 'https://mahesh-sudi-portfolio-1.onrender.com/api/admin';
+
 
   // Check whether code is running in browser
   private isBrowser(): boolean {
@@ -57,11 +59,17 @@ export class AdminService {
     );
   }
 
-  getContacts(): Observable<ContactsResponse> {
-    return this.http.get<ContactsResponse>(
-      `${this.apiUrl}/contacts`
-    );
+getContacts(): Observable<ContactsResponse> {
+  if (!this.isBrowser()) {
+    return new Observable<ContactsResponse>(subscriber => {
+      subscriber.complete();
+    });
   }
+
+  return this.http.get<ContactsResponse>(
+    `${this.apiUrl}/contacts`
+  );
+}
 
   markAsRead(id: string): Observable<any> {
     return this.http.patch(

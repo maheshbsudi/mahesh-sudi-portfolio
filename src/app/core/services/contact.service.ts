@@ -23,7 +23,8 @@ export class ContactService {
 
   private http = inject(HttpClient);
 
-  private readonly apiUrl = 'http://localhost:5000/api/contact';
+  // private readonly apiUrl = 'http://localhost:5000/api/contact';
+  private readonly apiUrl = 'https://mahesh-sudi-portfolio-1.onrender.com/api/contact';
 
   submitContact(data: ContactPayload): Observable<ContactResponse> {
     return this.http.post<ContactResponse>(this.apiUrl, data);
